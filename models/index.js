@@ -34,8 +34,9 @@ db.sequelize = sequelize
 
 db.products = require('./productModel.js')(sequelize,DataTypes)
 db.reviews = require('./reviewModel.js')(sequelize,DataTypes)
+db.workers = require('./workerModel.js')(sequelize,DataTypes)
 
-db.sequelize.sync({ force: false})
+db.sequelize.sync({ alter: true}) // This checks what is the current state of the table in the database
 .then(()=>{
     console.log('yes re-sync done!')
 })
