@@ -39,6 +39,8 @@ module.exports = (sequelize,DataTypes) => {
         phone2: {
             type: DataTypes.INTEGER
         }
+    },{
+        timestamps: false
     })
 
     return Worker

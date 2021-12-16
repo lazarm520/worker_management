@@ -18,7 +18,9 @@ app.use(express.urlencoded({extends: true}))
 // routers
 
 const productRouter = require('./routes/productRoute')
+const workerRouter = require('./routes/workerRoute')
 app.use('/api/products', productRouter)
+app.use('/api/workers', workerRouter)
 
 
 // Testing API
