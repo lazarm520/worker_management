@@ -3,7 +3,6 @@ const db = require('../models')
 // create main Model
 
 const Worker = db.workers
-const Review = db.reviews
 
 // main work
 
@@ -11,10 +10,18 @@ const Review = db.reviews
 
 const addWorker = async (req, res) => {
     let info = {
-        title: req.body.title,
-        price: req.body.price,
-        description: req.body.description,
-        published: req.body.published ? req.body.published : false
+        SCC_ID: req.body.SCC_ID,
+        ambatovy_ID: req.body.ambatovy_ID || "",
+        firstname: req.body.firstname || "",
+        lastname: req.body.lastname || "",
+        position: req.body.position || "",
+        location: req.body.location || "",
+        gender: req.body.gender || "",
+        working: req.body.working ? req.body.working : false,
+        CIN: req.body.CIN || "",
+        birthday: req.body.birthday || "",
+        phone1: req.body.phone1 || 0,
+        phone2: req.body.phone2 || 0,
     }
 
     const worker = await Worker.create(info)
@@ -53,10 +60,10 @@ const deleteWorker = async (req, res)=>{
     res.status(200).send('Worker is deleted!')
 }
 
-// 6. Get published Worker
+// 6. Get Workers on site
 
-const getPublishedWorker = async (req, res)=>{
-    const workers = await Worker.findAll({where: {published: true}})
+const getActiveWorker = async (req, res)=>{
+    const workers = await Worker.findAll({where: {working: true}})
     res.status(200).send(workers)
 }
 
@@ -66,5 +73,5 @@ module.exports = {
     getOneWorker,
     updateWorker,
     deleteWorker,
-    getPublishedWorker
+    getActiveWorker
 }

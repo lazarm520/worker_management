@@ -18,7 +18,7 @@ module.exports = (sequelize,DataTypes) => {
         position: {
             type: DataTypes.STRING
         },
-        new_position: {
+        location: {
             type: DataTypes.STRING
         },
         gender: {
