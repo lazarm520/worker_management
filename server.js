@@ -4,7 +4,7 @@ const cors = require('cors')
 const app = express()
 
 var corOption = {
-    origin: 'http://localhost:4000'
+    origin: process.env.ORIGIN
 }
 
 // Middleware
