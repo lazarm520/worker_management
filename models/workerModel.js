@@ -1,12 +1,12 @@
 module.exports = (sequelize,DataTypes) => {
 
     const Worker = sequelize.define('worker',{
-        SCC_ID: {
+        job_ID: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true
         },
-        ambatovy_ID: {
+        owner_ID: {
             type: DataTypes.STRING
         },
         firstname: {

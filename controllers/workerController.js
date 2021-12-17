@@ -10,8 +10,8 @@ const Worker = db.workers
 
 const addWorker = async (req, res) => {
     let info = {
-        SCC_ID: req.body.SCC_ID,
-        ambatovy_ID: req.body.ambatovy_ID || "",
+        job_ID: req.body.job_ID,
+        owner_ID: req.body.owner_ID || "",
         firstname: req.body.firstname || "",
         lastname: req.body.lastname || "",
         position: req.body.position || "",
